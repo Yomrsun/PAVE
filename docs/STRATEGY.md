@@ -84,28 +84,28 @@ the same offer.
 
 ## Section by section
 
-The look is the current pave.agency system (Raveo, the same colors, radii, pill buttons, outlined pill
-labels, floating white nav, dark accordion section, "Start Paving." footer card and the "Book a meeting"
-tab) using your own photography and the logo-in-sand film. Layout moves are borrowed from the Cunnet
-reference.
+The look is the current pave.agency system (Raveo, the same colors, radii, text-roll pill buttons,
+outlined pill labels, glass nav bar, two-tone headline, dark accordion section, "Start Paving." footer card
+and the "Book a meeting" tab) using your own photography and films. Layout moves are borrowed from the
+Cunnet reference.
 
 | Section | Job | Built from |
 |---|---|---|
-| Hero | Outcome, positioning and offer in five seconds | Full-bleed logo-in-sand film, Cunnet-scale "Own your category." Orange pill books the call, glass pill gets the Snapshot. Glass testimonial card and chips as on pave.agency |
+| Hero | Outcome, positioning and offer in five seconds | The silk film and glass nav from pave.agency, with a Cunnet-scale two-tone "Own your / category." Orange pill books the call, glass pill gets the Snapshot. Glass testimonial card and chips as on pave.agency |
 | Logo row | Replace the old blurred logos with real proof | pave.agency "Trusted by" row: 35 logos framed as the team's credentials, plus selected bookings |
 | Statement + why | The category of one, stated big | Cunnet statement with an inline dark pill, then "↳ Why brands switch" photo cards |
 | Photo strip | Taste signal in motion | Cunnet's gray thumbnail band, using pave.agency photography and studio work |
 | Diagnosis | Make the right buyer feel understood | pave.agency centered question (your own "Ever wondered why your competitors…" line) and the icon-card accordion beside a large image. Each pain opens to its fix |
-| Proof band | Twenty years, counted | pave.agency full-bleed video section ("We've poured more than 20 years…") with 4,125+ · 5.31 · 460+ · 120M+ |
-| The Category Review | The offer, placed high | pave.agency white icon cards: before, on and after the call, the walk-away list, and a dark "Yours to keep" card |
+| Proof band | Twenty years, counted | pave.agency full-bleed video section with the logo-in-sand film ("We've poured more than 20 years…") and 4,125+ · 5.31 · 460+ · 120M+ on hairlines |
+| The Category Review | The offer, placed high | pave.agency white icon cards (before, on and after the call) and a dark "Yours to keep" card |
 | Four rooms | Teach before selling (Gary + Chris) | pave.agency eye + "verified comment" layout: the answer, the thread, the screen, the feed |
-| Services | Show the range without a menu | Cunnet giant list: hovering swaps the image and proof stat, clicking opens what's included. Grouped in the deck's pillar order |
+| Services | Show the range without a menu | Cunnet giant list, grey until active: hovering swaps the image and proof stat, clicking opens what's included. Grouped in the deck's pillar order |
 | Results + studio work | Proof the buyer can find themselves in | Cunnet dark portfolio: eight case cards with the headline number over the image, goal filters, then Stro, GCV and PTM |
-| Snapshot + testimonial | Catch visitors who aren't ready to talk | Peach (brand accent-16) band with checklist and a starred testimonial card |
+| Snapshot + testimonial | Catch visitors who aren't ready to talk | Warm-grey band with what the Snapshot covers and a starred testimonial card |
 | How we work | Kill the fear of a slow start | pave.agency dark accordion ("The Hidden Layer" section). The Category Review is step one |
 | Book | The conversion point | Agenda, who you'll meet, for / not-for, and the inline Calendly card that every booking button scrolls to |
 | FAQ | Answer objections before they block the booking | White accordion rows, also emitted as FAQPage schema |
-| Footer | Brand sign-off plus the second path | pave.agency "Control the narrative." + "Start Paving." card with the Snapshot form, then Cunnet's giant sign-off |
+| Footer | Brand sign-off plus the second path | pave.agency "Control the narrative." + "Start Paving." card with the Snapshot form, closing on a giant pave.agency wordmark (Cunnet's "SAY HELLO!" move) |
 
 ### The conversion path
 

@@ -5,16 +5,16 @@ senior lead walks the 2026 capabilities deck against the prospect's own category
 
 It's static HTML, CSS and JS with no framework and no build step. The visual system is the current
 pave.agency Webflow system (Raveo, the same colors, radii, pill buttons, pill labels, floating nav, dark accordion
-section and "Start Paving." footer card, plus your own photography and the logo-in-sand film), combined with
+section and "Start Paving." footer card, plus your own photography, the silk hero film and the logo-in-sand film), combined with
 layout moves from the Cunnet reference (giant type, photo strip, statement with an inline pill, oversized services
-list with image swap, dark portfolio grid, giant sign-off). It can ship as it is or be rebuilt section by section in Webflow.
+list with image swap, dark portfolio grid, giant wordmark sign-off). It can ship as it is or be rebuilt section by section in Webflow.
 
 ```
 index.html                 the page (all copy lives here)
 assets/css/styles.css      design system: pave.agency Webflow tokens (Raveo, #f8f7f5 / #efede6 / #181e25 / #f58659) + Cunnet layouts
 assets/js/main.js          interactions: Calendly embed, services list, results filter, accordions, form, "Book a meeting" tab
 assets/fonts/              Raveo 400–700 (from the pave.agency Webflow project)
-assets/video/              pave-sand.mp4 (logo-in-sand hero film, 2.2 MB) · fabric.mp4 (band background)
+assets/video/              fabric.mp4 (silk hero film, as on pave.agency) · pave-sand.mp4 (logo-in-sand film for the "20 years" band, 2.2 MB)
 assets/img/photo/          pave.agency photography and textures, web-sized
 assets/img/logos/          35 credential logos (monochrome, from deck P.04)
 assets/img/work/           Stro, Game Changers Ventures and PTM Wealth imagery (from deck P.35–39)

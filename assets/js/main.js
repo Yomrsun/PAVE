@@ -130,6 +130,9 @@
     burger.addEventListener('click', function () { setMenu(!nav.classList.contains('is-open')); });
     menu.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && nav.classList.contains('is-open')) { setMenu(false); burger.focus(); } });
+    menu.addEventListener('focusout', function (e) {
+      if (nav.classList.contains('is-open') && !menu.contains(e.relatedTarget) && !nav.contains(e.relatedTarget)) setMenu(false);
+    });
   }
   var hero = $('.hero');
   function onScroll() {
@@ -139,6 +142,20 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
+
+  /* ---------- pave.agency text-roll on buttons and nav links ---------- */
+  if (!reduceMotion) {
+    $$('.btn, .nav__links a').forEach(function (el) {
+      var tn = null;
+      Array.prototype.forEach.call(el.childNodes, function (n) { if (!tn && n.nodeType === 3 && n.textContent.trim()) tn = n; });
+      if (!tn) return;
+      var label = tn.textContent.trim();
+      var roll = document.createElement('span'); roll.className = 'roll';
+      var inner = document.createElement('span'); inner.setAttribute('data-t', label); inner.textContent = label;
+      roll.appendChild(inner);
+      el.replaceChild(roll, tn);
+    });
+  }
 
   /* ---------- floating "Book a meeting" tab ---------- */
   var meeting = $('#meeting');
@@ -152,15 +169,19 @@
     };
     setMeeting(false);
     tab.addEventListener('click', function () { setMeeting(!meeting.classList.contains('is-open')); track('meeting_tab_toggle'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && meeting.classList.contains('is-open')) { setMeeting(false); tab.focus(); } });
+    document.addEventListener('click', function (e) { if (meeting.classList.contains('is-open') && !meeting.contains(e.target)) setMeeting(false); });
     panel.addEventListener('click', function (e) { if (e.target.closest('a')) setMeeting(false); });
     // step aside while the calendar or the footer form is on screen
     if (hasIO) {
       var away = new Set(['hero']);
       meeting.classList.add('is-away');
+      meeting.inert = true;
       var heroEl = document.querySelector('.hero');
       if (heroEl) new IntersectionObserver(function (en) {
         if (en[0].intersectionRatio >= 0.5) away.add('hero'); else away.delete('hero');
         meeting.classList.toggle('is-away', away.size > 0);
+        meeting.inert = away.size > 0;
         if (away.size) setMeeting(false);
       }, { threshold: [0, 0.5, 1] }).observe(heroEl);
       ['book', 'contact'].forEach(function (id) {
@@ -169,6 +190,7 @@
         new IntersectionObserver(function (en) {
           if (en[0].isIntersecting) away.add(id); else away.delete(id);
           meeting.classList.toggle('is-away', away.size > 0);
+          meeting.inert = away.size > 0;
           if (away.size) setMeeting(false);
         }, { threshold: 0.05 }).observe(el);
       });
@@ -250,7 +272,6 @@
   });
 
   /* ---------- services: hover swaps the image, click opens details ---------- */
-  var list = $('.svc-list');
   var svcs = $$('.svc');
   var mediaImgs = $$('.svc-media img');
   var cap = $('.svc-media__cap');
@@ -259,29 +280,23 @@
     mediaImgs.forEach(function (img) { img.classList.toggle('is-on', img.getAttribute('data-svc') === id); });
     if (cap) { $('b', cap).textContent = svc.getAttribute('data-stat'); $('span', cap).textContent = svc.getAttribute('data-stat-label'); }
   }
-  if (svcs.length) showSvc(svcs[0]);
+  function activate(svc) { svcs.forEach(function (o) { o.classList.toggle('is-active', o === svc); }); showSvc(svc); }
+  if (svcs.length) activate(svcs[0]);
   svcs.forEach(function (svc) {
     var b = $('.svc__btn', svc);
     var panel = $('.svc__panel', svc);
     if (panel) panel.setAttribute('inert', '');
-    b.addEventListener('mouseenter', function () {
-      svcs.forEach(function (o) { o.classList.toggle('is-active', o === svc); });
-      showSvc(svc);
-    });
-    b.addEventListener('focus', function () { showSvc(svc); });
+    b.addEventListener('mouseenter', function () { activate(svc); });
+    b.addEventListener('focus', function () { activate(svc); });
     b.addEventListener('click', function () {
       var open = !svc.classList.contains('is-open');
       svc.classList.toggle('is-open', open);
       b.setAttribute('aria-expanded', String(open));
       if (panel) { if (open) panel.removeAttribute('inert'); else panel.setAttribute('inert', ''); }
-      showSvc(svc);
+      activate(svc);
       if (open) track('service_open', { service: $('.svc__name', svc).textContent });
     });
   });
-  if (list) {
-    list.addEventListener('mouseenter', function () { list.classList.add('is-hovering'); });
-    list.addEventListener('mouseleave', function () { list.classList.remove('is-hovering'); svcs.forEach(function (o) { o.classList.remove('is-active'); }); });
-  }
 
   /* ---------- results filter ---------- */
   var filters = $$('[data-filter]');
