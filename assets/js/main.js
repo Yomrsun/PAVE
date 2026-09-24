@@ -379,7 +379,11 @@
           copy.textContent = 'We\'ll reply within two business days. Want to pick a time for your Category Review now?';
         }
         var bookLink = $('[data-book-prefill]', form);
-        if (bookLink) {
+        if (bookLink && CONFIG.previewMode) {
+          bookLink.setAttribute('href', bookingUrl({ name: payload.name || '', email: payload.email || '', a1: payload.category || '' }));
+          bookLink.setAttribute('target', '_blank');
+          bookLink.setAttribute('rel', 'noopener');
+        } else if (bookLink) {
           var extra = { name: payload.name || '', email: payload.email || '', a1: payload.category || '', a2: payload.competitors || '', a3: payload.website || '', a4: payload.budget || '' };
           bookLink.setAttribute('href', bookingUrl(extra));
           bookLink.addEventListener('click', function (ev) {
@@ -398,6 +402,13 @@
         track('lead_submit_error');
       };
 
+      if (CONFIG.previewMode) {
+        // Preview builds have no backend: show the success state, say plainly that nothing was sent.
+        success(false);
+        var pc = $('[data-success-copy]', form);
+        if (pc) pc.textContent = 'This is a preview, so nothing was sent. On the live site this goes to your CRM and the visitor gets their Snapshot within two business days.';
+        return;
+      }
       if (CONFIG.formEndpoint) {
         fetch(CONFIG.formEndpoint, { method: 'POST', headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' }, body: JSON.stringify(payload) })
           .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); success(false); })

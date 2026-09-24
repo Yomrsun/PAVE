@@ -93,7 +93,7 @@ ul, ol { list-style: none; padding: 0; }
 .btn-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
 
 /* ---------- nav (floating white bar) ---------- */
-.nav { position: fixed; left: 22px; right: 22px; top: 12px; z-index: 100; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 12px 0 22px; border-radius: 8px; transition: background-color .35s, box-shadow .35s; }
+.nav { position: fixed; left: 22px; right: 22px; top: calc(12px + env(safe-area-inset-top, 0px)); z-index: 100; height: var(--nav-h); display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 0 12px 0 22px; border-radius: 8px; transition: background-color .35s, box-shadow .35s; }
 .nav.is-solid, .nav.is-open { background: #fff; box-shadow: 0 1px 2px rgba(24, 30, 37, .06), 0 10px 30px -14px rgba(24, 30, 37, .2); }
 .nav__logo img { height: 22px; width: auto; }
 .nav__logo .logo-orange { display: none; }
@@ -473,7 +473,7 @@ ul, ol { list-style: none; padding: 0; }
 .meeting__tab { display: flex; align-items: center; gap: 8px; margin-left: auto; height: 38px; padding: 0 16px; border-radius: 6px 6px 0 0; background: #fff; box-shadow: 0 -6px 24px -10px rgba(24, 30, 37, .35); font-size: 12px; font-weight: 600; letter-spacing: .4px; text-transform: uppercase; width: max-content; }
 .meeting__tab svg { width: 12px; height: 12px; transition: transform .3s; }
 .meeting.is-open .meeting__tab svg { transform: rotate(180deg); }
-.meeting__panel { background: #fff; border-radius: 8px 0 0 0; padding: 20px; box-shadow: 0 -12px 32px -16px rgba(24, 30, 37, .4); display: grid; gap: 12px; justify-items: start; }
+.meeting__panel { background: #fff; border-radius: 8px 0 0 0; padding: 20px 20px calc(20px + env(safe-area-inset-bottom, 0px)); box-shadow: 0 -12px 32px -16px rgba(24, 30, 37, .4); display: grid; gap: 12px; justify-items: start; }
 .meeting__panel img { width: 64px; height: 64px; border-radius: 14px; }
 .meeting__panel b { font-size: 18px; font-weight: 500; letter-spacing: -.5px; line-height: 1.2; }
 .meeting__panel p { font-size: 14px; color: var(--muted); }
