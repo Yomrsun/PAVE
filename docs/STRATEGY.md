@@ -41,7 +41,7 @@ the same offer.
   - *Effort and sacrifice:* named seniors, a three-month minimum then rolling, you own the agents,
     data and work, and you keep the Snapshot, the three moves and the Plan whether you hire PAVE or
     not.
-- **The value stack sits high (section 04),** so a skimmer sees what the call gets them before
+- **The value stack sits high (right after the proof band),** so a skimmer sees what the call gets them before
   reading eight case studies.
 - **A lead magnet that solves a narrow problem and exposes the next one.** The Snapshot shows
   *where* you're invisible against two competitors. Fixing it is the call.
@@ -84,37 +84,40 @@ the same offer.
 
 ## Section by section
 
-| # | Section | Job | Notes |
-|---|---|---|---|
-| — | Announcement bar | Put the free Snapshot hook on screen before the hero loads | Dismissible, remembered for the session |
-| 00 | Hero | Outcome, positioning and offer in five seconds | "Own your category." in Cunnet-scale type. Two CTAs (book = filled orange, Snapshot = outline). Risk-reversal microcopy. Proof row: 4,125+ · 5.31 · 8 wks · 460+ |
-| — | Work strip | Taste signal in motion | Cunnet's image band, built from Stro / GCV / PTM work in the deck |
-| 01 | Credentials | Replace the old blurred logos with real proof | The deck's own framing, "the rooms our people have worked in", plus selected bookings |
-| 02 | Diagnosis | Make the right buyer feel understood | "Your competitor isn't better. They're easier to find." Pain → fix table ending in "one plan, one team, one number" |
-| 03 | Position | The category of one, stated big | Cunnet statement line with an inline pill, plus the deck's FIG. 01–03 |
-| 04 | The Category Review | The offer, placed high | Before / on / after, a six-item stack, "yours to keep", honest urgency |
-| 05 | Four rooms | Teach before selling (Gary + Chris) | The Snapshot covers the answer and the thread; the call covers the screen and the feed |
-| 06 | Services | Show the range without a menu | Ten giant 1–2-word labels in **the deck's pillar order**, so P.05 on the call looks familiar. Hover shows a proof stat; click opens what's included |
-| 07 | Creative work | Studio taste signal | Cunnet's dark grid; hover swaps to a second image |
-| 08 | Results | Proof the buyer can find themselves in | Eight cases, filterable by goal (Revenue / Leads & B2B / Search / Culture), with charts indexed to baseline = 100. Every card links to #book with "Walk me through this one" |
-| 09 | Testimonials | Voice of the customer after the numbers | "Invisible to inevitable" in giant type |
-| 10 | Snapshot band | Catch visitors who aren't ready to talk | Orange band (from deck P.41) with a checklist of what's in the Snapshot |
-| 11 | How we work | Kill the fear of a slow start | The call is **Step 00**, so booking feels like starting. Deck timeline, collapsible scope table, plain terms |
-| 12 | Book | The conversion point | Agenda, who you'll meet, for / not-for, and the **inline Calendly**, so nobody leaves the page to book |
-| 13 | FAQ | Answer objections before they block the booking | Ten answers from deck facts. Also emitted as FAQPage schema, the same AEO work PAVE sells |
-| — | Final | Brand sign-off plus the second path | "Control the narrative." / giant "Start paving." Qualifying Snapshot form, direct contact |
+The look is the current pave.agency system (Raveo, the same colors, radii, pill buttons, outlined pill
+labels, floating white nav, dark accordion section, "Start Paving." footer card and the "Book a meeting"
+tab) using your own photography and the logo-in-sand film. Layout moves are borrowed from the Cunnet
+reference.
+
+| Section | Job | Built from |
+|---|---|---|
+| Hero | Outcome, positioning and offer in five seconds | Full-bleed logo-in-sand film, Cunnet-scale "Own your category." Orange pill books the call, glass pill gets the Snapshot. Glass testimonial card and chips as on pave.agency |
+| Logo row | Replace the old blurred logos with real proof | pave.agency "Trusted by" row: 35 logos framed as the team's credentials, plus selected bookings |
+| Statement + why | The category of one, stated big | Cunnet statement with an inline dark pill, then "↳ Why brands switch" photo cards |
+| Photo strip | Taste signal in motion | Cunnet's gray thumbnail band, using pave.agency photography and studio work |
+| Diagnosis | Make the right buyer feel understood | pave.agency centered question (your own "Ever wondered why your competitors…" line) and the icon-card accordion beside a large image. Each pain opens to its fix |
+| Proof band | Twenty years, counted | pave.agency full-bleed video section ("We've poured more than 20 years…") with 4,125+ · 5.31 · 460+ · 120M+ |
+| The Category Review | The offer, placed high | pave.agency white icon cards: before, on and after the call, the walk-away list, and a dark "Yours to keep" card |
+| Four rooms | Teach before selling (Gary + Chris) | pave.agency eye + "verified comment" layout: the answer, the thread, the screen, the feed |
+| Services | Show the range without a menu | Cunnet giant list: hovering swaps the image and proof stat, clicking opens what's included. Grouped in the deck's pillar order |
+| Results + studio work | Proof the buyer can find themselves in | Cunnet dark portfolio: eight case cards with the headline number over the image, goal filters, then Stro, GCV and PTM |
+| Snapshot + testimonial | Catch visitors who aren't ready to talk | Peach (brand accent-16) band with checklist and a starred testimonial card |
+| How we work | Kill the fear of a slow start | pave.agency dark accordion ("The Hidden Layer" section). The Category Review is step one |
+| Book | The conversion point | Agenda, who you'll meet, for / not-for, and the inline Calendly card that every booking button scrolls to |
+| FAQ | Answer objections before they block the booking | White accordion rows, also emitted as FAQPage schema |
+| Footer | Brand sign-off plus the second path | pave.agency "Control the narrative." + "Start Paving." card with the Snapshot form, then Cunnet's giant sign-off |
 
 ### The conversion path
 
-- **Primary:** any CTA → `#book` → Calendly slot → booking questions → Snapshot emailed the day
+- **Primary:** any CTA → the calendar card (`#book-cal`) → Calendly slot → booking questions → Snapshot emailed the day
   before → 30-minute Category Review → Category Plan within three business days → three-month
   engagement.
-- **Secondary:** hero / Snapshot band / final section → `#snapshot` form → Snapshot within two
+- **Secondary:** hero / Snapshot band → `#snapshot` form in the footer card → Snapshot within two
   business days → one follow-up offering a time. After submitting, the success state goes straight
   to a pre-filled Calendly with the visitor's name, email and category, so hot leads can book right
   away.
 - **Consistency rules:** one primary CTA label everywhere ("Book my Category Review"). Every
-  in-section pill goes to `#book`. Turnaround times and Snapshot scope are the same wherever they
+  in-section pill goes to the calendar card. Turnaround times and Snapshot scope are the same wherever they
   appear.
 
 ### Old page vs. new page
@@ -134,7 +137,7 @@ the same offer.
 
 1. **Hero line.** "Own your category." (control) vs. "Invisible to inevitable." with the VP of
    Marketing quote as attribution. *Hypothesis:* a line borrowed from a client reads as proof, not a
-   slogan, and lifts hero → #book clicks among burned CMOs. *Metric:* bookings per unique visitor.
+   slogan, and lifts hero → booking clicks among burned CMOs. *Metric:* bookings per unique visitor.
 2. **Guarantee line.** Add "Leave without three moves you'd actually run and we'll book a second
    session with a channel lead, free." *Hypothesis:* explicit risk reversal lifts founder and
    mid-market bookings without lowering enterprise quality. *Guardrail:* share of bookings in the
@@ -142,8 +145,8 @@ the same offer.
 3. **Published fee floor.** Add "Engagements typically start at $X/month in fees, plus media" to the
    pricing FAQ. *Hypothesis:* fewer total bookings but a higher qualified share and close rate, so
    less wasted senior time. *Metric:* close rate per 100 bookings.
-4. **Offer placement.** The full offer block at section 04 (control) vs. a two-line teaser there with
-   the full stack only at #book. *Metric:* bookings per session, split by device.
+4. **Offer placement.** The full offer block after the proof band (control) vs. a two-line teaser there with
+   the full stack only next to the calendar. *Metric:* bookings per session, split by device.
 5. **Booking flow.** The inline Calendly with required questions (control) vs. a three-field
    qualifier (category, budget, role) first, then the calendar. *Hypothesis:* easy questions first
    lift completion through commitment and consistency. *Metric:* embed-start → confirmed booking.
