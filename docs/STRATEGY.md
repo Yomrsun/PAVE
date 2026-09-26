@@ -92,15 +92,14 @@ Cunnet reference.
 | Section | Job | Built from |
 |---|---|---|
 | Hero | Outcome, positioning and offer in five seconds | The silk film and glass nav from pave.agency, with a Cunnet-scale two-tone "Own your / category." Orange pill books the call, glass pill gets the Snapshot. Glass testimonial card and chips as on pave.agency |
-| Logo row | Replace the old blurred logos with real proof | pave.agency "Trusted by" row: 35 logos framed as the team's credentials, plus selected bookings |
 | Statement + why | The category of one, stated big | Cunnet statement with an inline dark pill, then "↳ Why brands switch" photo cards |
 | Photo strip | Taste signal in motion | Cunnet's gray thumbnail band, using pave.agency photography and studio work |
 | Diagnosis | Make the right buyer feel understood | pave.agency centered question (your own "Ever wondered why your competitors…" line) and the icon-card accordion beside a large image. Each pain opens to its fix |
 | Proof band | Twenty years, counted | pave.agency full-bleed video section with the logo-in-sand film ("We've poured more than 20 years…") and 4,125+ · 5.31 · 460+ · 120M+ on hairlines |
 | The Category Review | The offer, placed high | pave.agency white icon cards (before, on and after the call) and a dark "Yours to keep" card |
-| Four rooms | Teach before selling (Gary + Chris) | pave.agency eye + "verified comment" layout: the answer, the thread, the screen, the feed |
+| Four rooms | Teach before selling (Gary + Chris) | pave.agency eye + "verified comment" layout: the answer, the thread, the screen (with a scrolling strip of CTV networks), the feed |
 | Services | Show the range without a menu | Cunnet giant list, grey until active: hovering swaps the image and proof stat, clicking opens what's included. Grouped in the deck's pillar order |
-| Results + studio work | Proof the buyer can find themselves in | Cunnet dark portfolio: eight case cards with the headline number over the image, goal filters, then Stro, GCV and PTM |
+| Results + photography | Proof the buyer can find themselves in | Cunnet dark portfolio: eight case cards with the headline number over the image and goal filters, then a grid of the team's campaign, product and event photography |
 | Snapshot + testimonial | Catch visitors who aren't ready to talk | Warm-grey band with what the Snapshot covers and a starred testimonial card |
 | How we work | Kill the fear of a slow start | pave.agency dark accordion ("The Hidden Layer" section). The Category Review is step one |
 | Book | The conversion point | Agenda, who you'll meet, for / not-for, and the inline Calendly card that every booking button scrolls to |

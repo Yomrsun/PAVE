@@ -16,8 +16,6 @@ assets/js/main.js          interactions: Calendly embed, services list, results 
 assets/fonts/              Raveo 400–700 (from the pave.agency Webflow project)
 assets/video/              fabric.mp4 (silk hero film, as on pave.agency) · pave-sand.mp4 (logo-in-sand film for the "20 years" band, 2.2 MB)
 assets/img/photo/          pave.agency photography and textures, web-sized
-assets/img/logos/          35 credential logos (monochrome, from deck P.04)
-assets/img/work/           Stro, Game Changers Ventures and PTM Wealth imagery (from deck P.35–39)
 assets/img/icons/          pave.agency feature icons + Zoom mark
 assets/img/brand/          logos (white / orange), favicon, touch icon, dots texture, social share image
 docs/STRATEGY.md           how the Hormozi, Gary Vee and Chris Do lenses shaped each section, plus an A/B test backlog
