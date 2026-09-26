@@ -35,7 +35,7 @@ the same offer.
 - **The value equation, applied section by section:**
   - *Dream outcome:* "Own your category."
   - *Perceived likelihood:* deck-counted proof above the fold (4,125+ projects, 5.31 average ROAS,
-    460+ deals), the logo wall, and eight case studies with indexed charts.
+    460+ deals) and eight case studies with the headline number over the image.
   - *Time delay:* the Snapshot lands before the call, a cost range comes *on* the call, the Plan
     follows in three business days, and work is in market in eight weeks.
   - *Effort and sacrifice:* named seniors, a three-month minimum then rolling, you own the agents,
@@ -124,7 +124,7 @@ Cunnet reference.
 | Old homepage | New homepage |
 |---|---|
 | A vague mechanism ("shape belief into permanance", with a typo) | Outcome and positioning in one sentence |
-| Blurred logos: "brands that don't want you to know" | 35 visible logos, framed as the team's credentials, plus selected bookings |
+| Blurred logos: "brands that don't want you to know" | Proof carried by numbers and eight case studies; logos and client names saved for the deck walkthrough |
 | No numbers | 4,125+ / 5.31 / 460+ above the fold, plus eight case studies with charts |
 | "Learn More" / "Drop us a line" | A named offer with a stacked value proposition, a pre-call deliverable, a cost range on the call and a written plan |
 | No qualification | Role, category, budget and timeline in the form, plus for / not-for lists by the calendar |
