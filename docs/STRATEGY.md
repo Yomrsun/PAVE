@@ -54,11 +54,11 @@ the same offer.
 ### Gary Vaynerchuk: attention, channels, energy
 
 - **"Where attention is underpriced" as a teaching section.** It covers four rooms the buyer checks:
-  *the answer* (ChatGPT/Gemini/Perplexity/Copilot), *the thread* (Reddit/Quora/forums), *the screen*
+  *the answer* (ChatGPT/Claude/Gemini/Perplexity/Copilot), *the thread* (Reddit/Quora/forums), *the screen*
   (Pave TV: 500+ apps, 120M+ U.S. households) and *the feed* (one asset → dozens of native cuts). Each
   room ends on an "Ask yourself" question the reader can't answer comfortably. "Underpriced" is framed
   as PAVE's view, never as "cheap": to a premium buyer, "cheap" signals a cheap-media shop.
-- **Operator-level pain lines:** "You asked ChatGPT for the best option in your category. You
+- **Operator-level pain lines:** "You asked ChatGPT or Claude for the best option in your category. You
   weren't in the answer." "The creative worked in March. It's been dying since April."
 - **Speed and volume** throughout: ten versions before lunch, eight weeks to market, weekly reporting.
 - **The announcement bar**: a free, concrete, category-specific deliverable in one line. The buyer

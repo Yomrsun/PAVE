@@ -16,7 +16,7 @@ Deck page numbers below refer to *Pave Capabilities 2026 v3* (54 pages).
    on the category and budget. The homepage promises "the senior lead you meet runs your account."
 3. **Build the Visibility Snapshot**: one page, the prospect vs. two competitors.
    - **Google:** who owns page one for 3–5 category terms.
-   - **The answer:** ask ChatGPT, Gemini, Perplexity and Copilot the same 3–5 buyer questions and log
+   - **The answer:** ask ChatGPT, Claude, Gemini, Perplexity and Copilot the same 3–5 buyer questions and log
      who gets named. This mirrors the P.21 model visibility audit and competitive share, and P.20
      answer monitoring.
    - **The thread:** the top 2–3 Reddit or forum threads about the category, and whether the
