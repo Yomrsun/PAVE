@@ -1,0 +1,473 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>PAVE — How It Works Together</title>
+<link rel="icon" href="../assets/img/brand/favicon-32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zalando+Sans:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Archivo:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --coral:#F0764A; --coral-d:#E2663B;
+  --bone:#F1EFE8; --silver:#D9DBDD;
+  --slate:#191D23;
+  --ink:#17181A; --ink-60:rgba(23,24,26,.64); --hair:rgba(23,24,26,.28);
+  --lhair:rgba(241,239,232,.26); --l60:rgba(241,239,232,.68);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{overflow-x:hidden}
+body{background:#232527;font-family:"Zalando Sans",Archivo,Helvetica,Arial,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased}
+a{color:inherit}
+
+/* ---------- deck chrome (screen only) ---------- */
+.chrome{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;justify-content:space-between;align-items:center;padding:14px 22px;background:rgba(20,21,23,.85);backdrop-filter:blur(10px);color:#EDECE7}
+.chrome .t{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.chrome .t span{color:var(--coral)}
+.chrome button{background:var(--coral);color:var(--ink);border:0;border-radius:999px;padding:9px 20px;font-family:inherit;font-size:13px;font-weight:600;cursor:pointer}
+.chrome button:hover{background:var(--coral-d)}
+.chrome .hint{font-size:11px;color:rgba(237,236,231,.55);margin-right:14px}
+
+/* ---------- slides ---------- */
+.deck{display:flex;flex-direction:column;align-items:center;gap:26px;padding:80px 0 60px}
+.frame{width:1280px;max-width:calc(100vw - 24px)}
+.slide{width:1280px;height:720px;position:relative;overflow:hidden;border-radius:10px;box-shadow:0 8px 40px rgba(0,0,0,.45);transform-origin:top left}
+.pad{position:absolute;inset:0;padding:64px 70px}
+.brand{position:absolute;top:36px;left:70px;font-size:20px;font-weight:700;letter-spacing:-.01em;line-height:1}
+.brand sup{font-size:.42em;font-weight:700;margin-left:1px}
+.s-bone .brand,.s-silver .brand{color:var(--coral-d)}
+.s-slate .brand{color:var(--coral)}
+.tagpos{position:absolute;top:34px;right:70px}
+.pageno{position:absolute;bottom:30px;right:70px;font-size:10px;font-weight:600;letter-spacing:.1em;opacity:.55}
+.confid{position:absolute;bottom:30px;left:70px;font-size:10px;font-weight:600;letter-spacing:.1em;opacity:.55;text-transform:uppercase}
+.caps{font-size:11.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.disp{font-weight:700;text-transform:uppercase;letter-spacing:-.03em;line-height:.92}
+.lead{font-size:17px;line-height:1.5;color:var(--ink-60)}
+.s-slate .lead{color:var(--l60)}
+.hl{color:var(--coral-d)}
+.s-slate .hl{color:var(--coral)}
+
+.s-coral{background:var(--coral);color:var(--ink)}
+.s-bone{background:var(--bone);color:var(--ink)}
+.s-silver{background:var(--silver);color:var(--ink)}
+.s-slate{background:var(--slate);color:var(--bone)}
+
+.cols{display:grid;gap:40px}
+.stat .n{font-weight:700;letter-spacing:-.02em;line-height:1}
+.stat .l{font-size:12.5px;line-height:1.45;margin-top:8px}
+.list li{list-style:none;padding:12px 2px;border-top:1px solid var(--hair);font-size:15px;line-height:1.45}
+.s-slate .list li{border-color:var(--lhair)}
+.list li b{font-weight:600}
+.tag{display:inline-block;border:1px solid currentColor;border-radius:999px;padding:5px 13px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;opacity:.85}
+.photo{background-size:cover;background-position:center;border-radius:14px;position:relative;overflow:hidden}
+.photo::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,10,12,.3),rgba(10,10,12,0) 40%,rgba(10,10,12,.45))}
+
+/* alphabet slide */
+.abc{display:grid;grid-template-columns:repeat(3,1fr);gap:36px;position:absolute;left:70px;right:70px;top:250px}
+.abc .k{font-size:92px;font-weight:700;letter-spacing:-.04em;line-height:.85;color:var(--coral)}
+.abc .full{font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;margin-top:14px}
+.abc p{font-size:14.5px;line-height:1.5;color:var(--l60);margin-top:10px}
+.abc dl{margin-top:16px;border-top:1px solid var(--lhair)}
+.abc dt{font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-top:12px}
+.abc dd{font-size:13.5px;line-height:1.45;margin-top:3px}
+
+/* chat mock */
+.chat{background:#fff;border-radius:14px;padding:22px 24px;box-shadow:0 12px 40px rgba(0,0,0,.12)}
+.chat .q{display:inline-block;background:var(--silver);border-radius:14px;padding:10px 14px;font-size:14px;margin-left:auto}
+.chat .row{display:flex}
+.chat .a{margin-top:16px;font-size:13.5px;line-height:1.55;color:var(--ink)}
+.chat .a ol{margin:10px 0 0 18px}
+.chat .a li{padding:3px 0}
+.chat .you{background:rgba(240,118,74,.18);border-radius:4px;padding:0 4px;font-weight:600}
+.chat .miss{margin-top:14px;padding-top:12px;border-top:1px dashed var(--hair);font-size:12px;color:var(--ink-60)}
+
+/* week timeline */
+.week{position:absolute;left:70px;right:70px;top:300px;display:grid;grid-template-columns:repeat(5,1fr);gap:18px}
+.day{border-top:3px solid var(--ink);padding-top:14px}
+.day:last-child{border-color:var(--coral-d)}
+.day .d{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.day .w{font-size:19px;font-weight:700;letter-spacing:-.01em;line-height:1.15;margin-top:10px}
+.day p{font-size:13.5px;line-height:1.5;color:var(--ink-60);margin-top:10px}
+.day .svc{display:inline-block;margin-top:12px;font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--hair);border-radius:999px;padding:4px 10px}
+
+/* start table */
+.start{width:100%;border-collapse:collapse}
+.start td{padding:13px 4px;border-top:1px solid var(--hair);font-size:15px;line-height:1.4;vertical-align:top}
+.start td:first-child{width:52%;color:var(--ink-60)}
+.start td:last-child{font-weight:600}
+.start th{text-align:left;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;padding:0 4px 10px}
+
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--coral);color:var(--ink);border-radius:999px;padding:14px 26px;font-size:17px;font-weight:600;text-decoration:none}
+.nets{font-size:15px;font-weight:600;line-height:1.9;color:var(--bone)}
+.nets span{opacity:.5;margin:0 6px}
+
+/* print */
+@media print{
+  body{background:#fff}
+  .chrome{display:none}
+  .deck{padding:0;gap:0;display:block}
+  .frame{width:auto;max-width:none;height:auto!important}
+  .slide{width:1280px;height:720px;border-radius:0;box-shadow:none;transform:none!important;page-break-after:always;break-after:page}
+  .frame:last-child .slide{page-break-after:auto}
+  @page{size:338.67mm 190.5mm;margin:0}
+}
+</style>
+</head>
+<body>
+<div class="chrome">
+  <div class="t">PAVE · <span>How it works together</span></div>
+  <div><span class="hint">Best in Chrome · exports at exact 16:9 slide size</span><button type="button" onclick="window.print()">Export to PDF</button></div>
+</div>
+
+<main class="deck">
+
+<!-- 01 COVER -->
+<div class="frame"><section class="slide s-coral"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">The playbook</span></div>
+  <div style="position:absolute;left:70px;right:70px;top:170px">
+    <div class="disp" style="font-size:112px">Be the answer<br>everywhere<br>they look.</div>
+    <div style="display:flex;justify-content:space-between;margin-top:56px;align-items:center">
+      <span class="caps">How our services work as one system</span>
+      <span style="font-size:15px">SEO · AEO · GEO · Psy-ops · Community · Paid · Pave TV · Creative · AI</span>
+      <span class="caps" style="color:var(--bone)">15-minute read</span>
+    </div>
+  </div>
+  <div class="confid">Prepared by PAVE · pave.agency</div>
+  <div class="pageno">01</div>
+</div></section></div>
+
+<!-- 02 WHY NOW -->
+<div class="frame"><section class="slide s-bone"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">Why now</span></div>
+  <div class="cols" style="grid-template-columns:1.05fr 1fr;position:absolute;left:70px;right:70px;top:150px;gap:70px">
+    <div>
+      <div class="disp" style="font-size:62px">Your buyer doesn't search once. They check five times.</div>
+      <p class="lead" style="margin-top:28px">Before anyone fills out your form, they've already checked you in five places. Most brands pay for one of them and hope. The brands that feel inevitable show up in all five, saying the same thing.</p>
+    </div>
+    <ul class="list" style="margin-top:6px">
+      <li><b>They Google it.</b> Blue links, maps, the shopping tab.</li>
+      <li><b>They ask an AI.</b> ChatGPT, Gemini, Perplexity or Google's AI Overview names three brands. Are you one of them?</li>
+      <li><b>They read the thread.</b> Reddit, Quora and niche forums, where buyers trust strangers more than your homepage.</li>
+      <li><b>They see you on the big screen.</b> Streaming TV makes a brand feel established.</li>
+      <li><b>They scroll the feed.</b> Short-form video, creators and retargeting keep you in view until they're ready.</li>
+    </ul>
+  </div>
+  <div class="pageno">02</div>
+</div></section></div>
+
+<!-- 03 SEO AEO GEO -->
+<div class="frame"><section class="slide s-slate"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">The new search</span></div>
+  <div style="position:absolute;left:70px;right:70px;top:108px">
+    <div class="disp" style="font-size:56px">Search split in three.<br><span class="hl">Most brands only play one.</span></div>
+  </div>
+  <div class="abc">
+    <div>
+      <div class="k">SEO</div>
+      <div class="full">Search engine optimization</div>
+      <p>Rank in the results on Google and Bing. The classic ten blue links.</p>
+      <dl><dt>Where it shows</dt><dd>Search results, maps, shopping</dd><dt>What wins</dt><dd>Technical health, content that matches intent, authority</dd><dt>What we measure</dt><dd>Rankings, organic traffic, conversions</dd></dl>
+    </div>
+    <div>
+      <div class="k">AEO</div>
+      <div class="full">Answer engine optimization</div>
+      <p>Be the direct answer that sits above the results, so the buyer never needs to click past you.</p>
+      <dl><dt>Where it shows</dt><dd>Google AI Overviews, featured snippets, "People also ask", voice assistants</dd><dt>What wins</dt><dd>Answer-first pages, structured data, clear facts about your brand</dd><dt>What we measure</dt><dd>Which questions you own, and where you lost them</dd></dl>
+    </div>
+    <div>
+      <div class="k">GEO</div>
+      <div class="full">Generative engine optimization</div>
+      <p>Get named and cited when someone asks ChatGPT, Gemini, Perplexity or Copilot for a recommendation.</p>
+      <dl><dt>Where it shows</dt><dd>AI assistants and chat answers</dd><dt>What wins</dt><dd>Being a source the models trust and repeat, with consistent facts across the web</dd><dt>What we measure</dt><dd>Your share of AI mentions vs. competitors, prompt by prompt</dd></dl>
+    </div>
+  </div>
+  <div class="pageno">03</div>
+</div></section></div>
+
+<!-- 04 AEO -->
+<div class="frame"><section class="slide s-bone"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">AEO · Answer engine optimization</span></div>
+  <div class="cols" style="grid-template-columns:1fr 1fr;position:absolute;left:70px;right:70px;top:150px;gap:70px">
+    <div>
+      <div class="disp" style="font-size:70px">The click is optional now.</div>
+      <p class="lead" style="margin-top:28px">Direct answers sit above the results, and many people never scroll past them. If the answer box names your competitor, your page-one ranking is working for them.</p>
+      <p class="lead" style="margin-top:16px">AEO is the work that puts your brand inside the answer itself.</p>
+    </div>
+    <ul class="list">
+      <li><b>Question mapping.</b> The real questions buyers ask, by stage and intent.</li>
+      <li><b>Answer-first content.</b> Pages that lead with the reply, then the evidence.</li>
+      <li><b>Structured data.</b> Schema that tells engines exactly what each answer is.</li>
+      <li><b>AI Overviews and snippets.</b> Formatting built to take the spot above the results.</li>
+      <li><b>Entity clarity.</b> Unambiguous facts about your brand, people and products.</li>
+      <li><b>Answer monitoring.</b> Which questions you own, and where you lost them.</li>
+    </ul>
+  </div>
+  <div class="pageno">04</div>
+</div></section></div>
+
+<!-- 05 GEO -->
+<div class="frame"><section class="slide s-silver"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">GEO · Generative engine optimization</span></div>
+  <div class="cols" style="grid-template-columns:1.1fr .9fr;position:absolute;left:70px;right:70px;top:140px;gap:60px">
+    <div>
+      <div class="disp" style="font-size:54px">If ChatGPT doesn't know you, your buyer won't either.</div>
+      <ul class="list" style="margin-top:26px">
+        <li><b>Model visibility audit.</b> Where you appear today, assistant by assistant.</li>
+        <li><b>Source authority and citations.</b> Content shaped to be quoted and attributed.</li>
+        <li><b>Knowledge graph.</b> Consistent facts about you across the open web.</li>
+        <li><b>Prompt coverage.</b> The phrasings buyers actually type, not keywords.</li>
+        <li><b>Correction.</b> Fixing what the models currently get wrong about you.</li>
+      </ul>
+    </div>
+    <div>
+      <div class="chat">
+        <div class="row"><span class="q" style="margin-left:auto">What's the best industrial parts supplier for a mid-size plant?</span></div>
+        <div class="a">Here are three strong options:
+          <ol><li>Competitor A: known for fast lead times</li><li><span class="you">Your brand</span>: frequently recommended on engineering forums</li><li>Competitor B: broad catalog</li></ol>
+        </div>
+        <div class="miss">Illustration. If you're not in this list, the buyer never visits your site. GEO work decides who gets named.</div>
+      </div>
+    </div>
+  </div>
+  <div class="pageno">05</div>
+</div></section></div>
+
+<!-- 06 PSY-OPS -->
+<div class="frame"><section class="slide s-coral"><div class="pad">
+  <div class="brand" style="color:var(--ink)">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">Psy-ops marketing</span></div>
+  <div class="cols" style="grid-template-columns:1fr 1fr;position:absolute;left:70px;right:70px;top:150px;gap:70px">
+    <div>
+      <div class="disp" style="font-size:62px">Shape what the market believes before they meet you.</div>
+      <p class="lead" style="margin-top:28px;color:rgba(23,24,26,.72)">Search, answers and ads decide <i>where</i> you show up. Psychology decides what people think when they see you. We build one narrative on buyer motivation, objections and decision patterns, then carry it through every channel.</p>
+    </div>
+    <ul class="list">
+      <li><b>Audience psychology.</b> The beliefs, influences and environments that decide the sale.</li>
+      <li><b>Narrative development.</b> One story that shapes how your whole category reads.</li>
+      <li><b>Behavioral messaging.</b> Copy built on motivation and objection, not adjectives.</li>
+      <li><b>Perception and sentiment.</b> Touchpoints that build familiarity and authority, monitored weekly.</li>
+      <li><b>Influence campaigns.</b> The same message across content, search, creators and TV.</li>
+    </ul>
+  </div>
+  <div class="pageno">06</div>
+</div></section></div>
+
+<!-- 07 COMMUNITY + INSTANT SEO -->
+<div class="frame"><section class="slide s-bone"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">Community · Instant SEO</span></div>
+  <div style="position:absolute;left:70px;right:70px;top:140px">
+    <div class="disp" style="font-size:62px">Be in the thread,<br>not just the search results.</div>
+    <p class="lead" style="margin-top:22px;max-width:760px">Reddit threads, Quora answers and trusted publications are where buyers do their research. They're also the material answer engines reach for. Showing up there feeds your SEO, AEO and GEO at the same time.</p>
+  </div>
+  <div class="cols" style="grid-template-columns:1fr 1fr;position:absolute;left:70px;right:70px;top:420px;gap:70px">
+    <ul class="list">
+      <li><b>Community.</b> Durable presence on Reddit, Quora and specialist forums.</li>
+      <li><b>Community intelligence.</b> The pain points and language buyers really use.</li>
+      <li><b>Mass distribution.</b> One asset, adapted for every channel you own and earn.</li>
+    </ul>
+    <ul class="list">
+      <li><b>Instant SEO.</b> High-authority publishing and digital PR around your priority terms.</li>
+      <li><b>Brand search page.</b> Control what page one says when someone searches your name.</li>
+      <li><b>Reputation.</b> Reviews, sentiment and how AI assistants describe you.</li>
+    </ul>
+  </div>
+  <div class="pageno">07</div>
+</div></section></div>
+
+<!-- 08 PAID + PAVE TV -->
+<div class="frame"><section class="slide s-slate"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">Paid media · Pave TV</span></div>
+  <div style="position:absolute;left:70px;right:70px;top:140px">
+    <div class="disp" style="font-size:66px">Buy the attention.<br><span class="hl">Then make it compound.</span></div>
+    <p class="lead" style="margin-top:22px;max-width:780px">Paid social, search and streaming TV create demand. On their own, they rent attention. Wired into search, answers and community, every impression leaves something behind: a branded search, a thread, a remembered name.</p>
+  </div>
+  <div class="cols" style="grid-template-columns:repeat(3,1fr);position:absolute;left:70px;right:70px;top:420px">
+    <div class="stat"><div class="n" style="font-size:64px">500+</div><div class="l">premium streaming apps, networks and TV environments</div></div>
+    <div class="stat"><div class="n" style="font-size:64px">120M+</div><div class="l">U.S. households reachable through programmatic TV</div></div>
+    <div class="stat"><div class="n" style="font-size:64px;color:var(--coral)">5.31</div><div class="l">average return on ad spend across our campaigns</div></div>
+  </div>
+  <div class="nets" style="position:absolute;left:70px;right:70px;bottom:62px">Hulu<span>·</span>Disney+<span>·</span>Peacock<span>·</span>Paramount+<span>·</span>Max<span>·</span>Roku<span>·</span>Tubi<span>·</span>ESPN<span>·</span>NBC Sports<span>·</span>CNN<span>·</span>Bloomberg<span>·</span>Univision</div>
+  <div class="pageno">08</div>
+</div></section></div>
+
+<!-- 09 CREATIVE -->
+<div class="frame"><section class="slide s-silver"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">Creative · Production</span></div>
+  <div class="cols" style="grid-template-columns:1fr 1fr;position:absolute;left:70px;right:70px;top:150px;gap:60px">
+    <div>
+      <div class="disp" style="font-size:78px">Ten versions before lunch.</div>
+      <p class="lead" style="margin-top:28px">The feed rewards volume and punishes fatigue. One strong idea becomes dozens of native cuts. Generative production adds variants by audience, market and offer, without another shoot day.</p>
+      <div style="display:flex;gap:40px;margin-top:34px">
+        <div class="stat"><div class="n" style="font-size:52px">1</div><div class="l">pillar asset</div></div>
+        <div class="stat"><div class="n" style="font-size:52px">→</div></div>
+        <div class="stat"><div class="n" style="font-size:52px">30+</div><div class="l">native cuts: TikTok, Reels, Shorts, CTV, display</div></div>
+      </div>
+    </div>
+    <div class="photo" style="background-image:url(../assets/img/photo/karat.webp);height:440px"></div>
+  </div>
+  <div class="pageno">09</div>
+</div></section></div>
+
+<!-- 10 AI + AUTOMATION -->
+<div class="frame"><section class="slide s-bone"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">AI agents · Automation</span></div>
+  <div class="cols" style="grid-template-columns:1fr 1fr;position:absolute;left:70px;right:70px;top:150px;gap:70px">
+    <div>
+      <div class="disp" style="font-size:66px">The follow-up never gets forgotten.</div>
+      <p class="lead" style="margin-top:28px">Everything above creates demand. This is what catches it. Agents and automations carry a lead from first touch to closed, with your team approving everything that goes out.</p>
+    </div>
+    <ul class="list">
+      <li><b>Lead qualification.</b> Score, enrich and route by intent, in real time.</li>
+      <li><b>Email and SMS.</b> Lifecycle journeys triggered by what people actually do.</li>
+      <li><b>Recovery.</b> Abandoned carts, registrations and applications brought back.</li>
+      <li><b>Research and reporting agents.</b> Competitors, answers and results watched continuously.</li>
+      <li><b>Human in the loop.</b> The agents do the volume. Your team keeps the judgment.</li>
+    </ul>
+  </div>
+  <div class="pageno">10</div>
+</div></section></div>
+
+<!-- 11 FLYWHEEL -->
+<div class="frame"><section class="slide s-slate"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">How it works together</span></div>
+  <div style="position:absolute;left:70px;top:130px;width:400px">
+    <div class="disp" style="font-size:58px">One plan.<br>One team.<br><span class="hl">One flywheel.</span></div>
+    <p class="lead" style="margin-top:24px">Each service makes the next one cheaper. TV and ads create curiosity. Search and AI answers catch it. Community confirms it. Automation closes it. The data goes back into targeting, and the loop gets faster every month.</p>
+  </div>
+  <svg viewBox="0 0 660 560" style="position:absolute;right:50px;top:110px;width:660px;height:560px" role="img" aria-label="Flywheel: attention, curiosity, answer, proof, conversion, retention, back to attention">
+    <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" fill="#F0764A"/></marker></defs>
+    <circle cx="330" cy="280" r="205" fill="none" stroke="rgba(241,239,232,.18)" stroke-width="2"/>
+    <g fill="none" stroke="#F0764A" stroke-width="2.5" marker-end="url(#ar)">
+      <path d="M406 90 A205 205 0 0 1 486 147"/>
+      <path d="M527 223 A205 205 0 0 1 527 337"/>
+      <path d="M486 413 A205 205 0 0 1 406 470"/>
+      <path d="M254 470 A205 205 0 0 1 174 413"/>
+      <path d="M133 337 A205 205 0 0 1 133 223"/>
+      <path d="M174 147 A205 205 0 0 1 254 90"/>
+    </g>
+    <g font-family="Zalando Sans, Arial, sans-serif" text-anchor="middle">
+      <g transform="translate(330 70)"><rect x="-66" y="-28" width="132" height="56" rx="28" fill="#F0764A"/><text y="-2" font-size="13.5" font-weight="700" fill="#17181A">ATTENTION</text><text y="16" font-size="10" fill="#17181A">TV · ads · creators</text></g>
+      <g transform="translate(512 185)"><rect x="-66" y="-28" width="132" height="56" rx="28" fill="#F1EFE8"/><text y="-2" font-size="13.5" font-weight="700" fill="#17181A">CURIOSITY</text><text y="16" font-size="10" fill="#17181A">they search &amp; ask</text></g>
+      <g transform="translate(512 375)"><rect x="-66" y="-28" width="132" height="56" rx="28" fill="#F1EFE8"/><text y="-2" font-size="13.5" font-weight="700" fill="#17181A">ANSWER</text><text y="16" font-size="10" fill="#17181A">SEO · AEO · GEO</text></g>
+      <g transform="translate(330 490)"><rect x="-66" y="-28" width="132" height="56" rx="28" fill="#F1EFE8"/><text y="-2" font-size="13.5" font-weight="700" fill="#17181A">PROOF</text><text y="16" font-size="10" fill="#17181A">threads · PR · reviews</text></g>
+      <g transform="translate(148 375)"><rect x="-66" y="-28" width="132" height="56" rx="28" fill="#F1EFE8"/><text y="-2" font-size="13.5" font-weight="700" fill="#17181A">CONVERSION</text><text y="16" font-size="10" fill="#17181A">pages · retargeting</text></g>
+      <g transform="translate(148 185)"><rect x="-66" y="-28" width="132" height="56" rx="28" fill="#F1EFE8"/><text y="-2" font-size="13.5" font-weight="700" fill="#17181A">RETENTION</text><text y="16" font-size="10" fill="#17181A">CRM · email · agents</text></g>
+      <text x="330" y="262" font-size="13" font-weight="600" letter-spacing="1.5" fill="rgba(241,239,232,.6)">PSY-OPS NARRATIVE</text>
+      <text x="330" y="288" font-size="22" font-weight="700" fill="#F1EFE8">The same story</text>
+      <text x="330" y="314" font-size="22" font-weight="700" fill="#F1EFE8">at every stop</text>
+    </g>
+  </svg>
+  <div class="pageno">11</div>
+</div></section></div>
+
+<!-- 12 A BUYER'S WEEK -->
+<div class="frame"><section class="slide s-bone"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">What it looks like</span></div>
+  <div style="position:absolute;left:70px;right:70px;top:130px">
+    <div class="disp" style="font-size:60px">One buyer. One week.<br>Five touches. One sale.</div>
+    <p class="lead" style="margin-top:18px">An illustration of the system from the couch, not a single campaign.</p>
+  </div>
+  <div class="week">
+    <div class="day"><div class="d">Monday</div><div class="w">Sees you during the game.</div><p>A 15-second spot on the living room TV, shown only to households that match your best customers.</p><span class="svc">Pave TV</span></div>
+    <div class="day"><div class="d">Tuesday</div><div class="w">Googles the category.</div><p>The AI Overview names you, and your comparison page ranks right under it.</p><span class="svc">SEO · AEO</span></div>
+    <div class="day"><div class="d">Wednesday</div><div class="w">Asks ChatGPT.</div><p>"What's the best option for a team like mine?" You're one of the three it recommends.</p><span class="svc">GEO</span></div>
+    <div class="day"><div class="d">Thursday</div><div class="w">Reads the Reddit thread.</div><p>The top thread compares options. Your expert answered the hard question.</p><span class="svc">Community</span></div>
+    <div class="day"><div class="d">Friday</div><div class="w">Books a demo.</div><p>A product cut follows them on social. The form routes them to sales in minutes.</p><span class="svc">Paid · Automation</span></div>
+  </div>
+  <div class="pageno">12</div>
+</div></section></div>
+
+<!-- 13 PROOF -->
+<div class="frame"><section class="slide s-coral"><div class="pad">
+  <div class="brand" style="color:var(--ink)">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">Proof</span></div>
+  <div style="position:absolute;left:70px;right:70px;top:140px">
+    <div class="disp" style="font-size:66px">When the pieces connect,<br>the numbers move.</div>
+  </div>
+  <div class="cols" style="grid-template-columns:repeat(4,1fr);position:absolute;left:70px;right:70px;top:380px;gap:36px">
+    <div class="stat"><div class="n" style="font-size:66px">+52%</div><div class="l"><b>Quote requests.</b> Top-five U.S. industrial manufacturer. Instant SEO across the forums where the category is researched: ~90% of targeted keywords ranked.</div></div>
+    <div class="stat"><div class="n" style="font-size:66px">+472%</div><div class="l"><b>Organic-assisted revenue.</b> National CPG brand, 36 months. Category search rebuilt around buying intent, with $0 added paid media.</div></div>
+    <div class="stat"><div class="n" style="font-size:66px">13M+</div><div class="l"><b>Short-form views in 60 days.</b> An airsoft brand's moment on a Kai Cenat livestream, clipped and distributed. +680% brand search interest.</div></div>
+    <div class="stat"><div class="n" style="font-size:66px">+186%</div><div class="l"><b>Return on ad spend.</b> Fortune 100 CPG company. Paid media rebuilt around category demand and honest attribution.</div></div>
+  </div>
+  <div class="confid" style="max-width:900px;text-transform:none;letter-spacing:0;font-weight:400;font-size:11px">Measured against each client's pre-engagement baseline. Names withheld under NDA or anonymized.</div>
+  <div class="pageno">13</div>
+</div></section></div>
+
+<!-- 14 WHERE TO START -->
+<div class="frame"><section class="slide s-silver"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">Where to start</span></div>
+  <div class="cols" style="grid-template-columns:.8fr 1.2fr;position:absolute;left:70px;right:70px;top:140px;gap:60px">
+    <div>
+      <div class="disp" style="font-size:56px">You don't buy all of it on day one.</div>
+      <p class="lead" style="margin-top:24px">Most clients start in one place and pull in the rest once the first results land.</p>
+      <ul class="list" style="margin-top:26px">
+        <li><b>8 weeks</b> from first look to work in market.</li>
+        <li><b>3-month minimum,</b> rolling after that.</li>
+        <li><b>You own</b> the agents, the data and the work.</li>
+      </ul>
+    </div>
+    <table class="start">
+      <tr><th>If this sounds like you</th><th>Start here</th></tr>
+      <tr><td>AI assistants recommend your competitors, not you</td><td>AEO + GEO</td></tr>
+      <tr><td>Paid social keeps getting more expensive</td><td>Pave TV + creative volume</td></tr>
+      <tr><td>Long sales cycle, and leads go cold</td><td>Instant SEO + automation</td></tr>
+      <tr><td>A competitor owns the conversation in your space</td><td>Community + psy-ops narrative</td></tr>
+      <tr><td>You're launching something new</td><td>Narrative + distribution + Pave TV</td></tr>
+      <tr><td>You rank, but nobody remembers you</td><td>Pave TV + reputation</td></tr>
+    </table>
+  </div>
+  <div class="pageno">14</div>
+</div></section></div>
+
+<!-- 15 CTA -->
+<div class="frame"><section class="slide s-slate"><div class="pad">
+  <div class="brand">PAVE<sup>™</sup></div>
+  <div class="tagpos"><span class="tag">Next step</span></div>
+  <div style="position:absolute;left:70px;right:70px;top:150px">
+    <div class="disp" style="font-size:96px">Bring your category.<br><span class="hl">Leave with a plan.</span></div>
+    <div class="cols" style="grid-template-columns:repeat(3,1fr);margin-top:48px;gap:40px">
+      <div><div class="caps hl">Before the call</div><p class="lead" style="margin-top:8px;font-size:15px">Your Visibility Snapshot: you vs. two competitors on Google, in AI answers and in the threads.</p></div>
+      <div><div class="caps hl">On the call</div><p class="lead" style="margin-top:8px;font-size:15px">30 minutes with a senior lead. Where to start, who'd run it, and a real cost range.</p></div>
+      <div><div class="caps hl">After the call</div><p class="lead" style="margin-top:8px;font-size:15px">Your Category Plan in writing within three business days. Yours to keep either way.</p></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:30px;margin-top:44px">
+      <a class="cta" href="https://calendly.com/pavemarketingcalendar/30min?utm_source=deck&amp;utm_medium=how-it-works" target="_blank" rel="noopener">Book a Category Review →</a>
+      <span style="font-size:15px;color:var(--l60)">contact@pave.agency · +1 (323) 716-2810 · pave.agency</span>
+    </div>
+  </div>
+  <div class="confid">Control the narrative. Start paving.</div>
+  <div class="pageno">15</div>
+</div></section></div>
+
+</main>
+
+<script>
+(function(){
+  var fit=function(){
+    var vw=Math.min(window.innerWidth-24,1280);
+    var s=vw/1280;
+    document.querySelectorAll('.frame').forEach(function(f){
+      var sl=f.querySelector('.slide');
+      sl.style.transform=s<1?'scale('+s+')':'none';
+      f.style.height=(720*s)+'px';
+    });
+  };
+  addEventListener('resize',fit);fit();
+})();
+</script>
+</body>
+</html>

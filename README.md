@@ -18,6 +18,7 @@ assets/video/              fabric.mp4 (silk hero film, as on pave.agency) · pav
 assets/img/photo/          pave.agency photography and textures, web-sized
 assets/img/icons/          pave.agency feature icons + Zoom mark
 assets/img/brand/          logos (white / orange), favicon, touch icon, dots texture, social share image
+deck/index.html            "How it works together": 15-slide HTML deck (3rd-touch follow-up), exports to PDF from the browser
 docs/STRATEGY.md           how the Hormozi, Gary Vee and Chris Do lenses shaped each section, plus an A/B test backlog
 docs/CALL-PLAYBOOK.md      minute-by-minute run of the Category Review, mapped to deck pages
 ```
@@ -26,7 +27,7 @@ docs/CALL-PLAYBOOK.md      minute-by-minute run of the Category Review, mapped t
 
 ```bash
 python3 -m http.server 8080
-# then open http://localhost:8080
+# then open http://localhost:8080 (the deck is at /deck/)
 ```
 
 ## Set up before going live

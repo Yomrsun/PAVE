@@ -574,3 +574,20 @@ ul, ol { list-style: none; padding: 0; }
 .ctv { --gap: 28px; margin-top: 18px; padding: 14px 0; border-block: 1px solid var(--line); }
 .ctv .marquee__track { animation-duration: 45s; }
 .ctv span { font-size: 22px; font-weight: 500; letter-spacing: -.8px; color: var(--soft); white-space: nowrap; }
+
+/* SEO / AEO / GEO explainer */
+.abc-head { max-width: 860px; }
+.abc-head .tag { margin-bottom: 20px; }
+.abc-head .h2 .soft { color: rgba(255, 255, 255, .42); }
+.abc-head p { margin-top: 20px; max-width: 640px; color: rgba(255, 255, 255, .72); font-size: 18px; line-height: 1.5; }
+.abc { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; margin-top: 64px; }
+.abc__col { border-top: 1px solid rgba(255, 255, 255, .18); padding-top: 24px; }
+.abc__big { display: block; font-size: clamp(88px, 11vw, 168px); font-weight: 600; line-height: .82; letter-spacing: -.06em; color: var(--accent); }
+.abc__col h3 { margin-top: 28px; font-size: 13px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; }
+.abc__col > p { margin-top: 12px; color: rgba(255, 255, 255, .72); line-height: 1.5; }
+.abc__col dl { margin: 24px 0 0; display: grid; gap: 4px; font-size: 14px; line-height: 1.45; }
+.abc__col dt { margin-top: 12px; font-size: 10px; font-weight: 600; letter-spacing: 1px; text-transform: uppercase; color: var(--accent); }
+.abc__col dd { margin: 0; color: rgba(255, 255, 255, .86); }
+.abc-foot { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; margin-top: 56px; padding-top: 28px; border-top: 1px solid rgba(255, 255, 255, .18); }
+.abc-foot p { color: rgba(255, 255, 255, .72); }
+@media (max-width: 991px) { .abc { grid-template-columns: minmax(0, 1fr); gap: 40px; margin-top: 48px; } .abc__big { font-size: 96px; } }

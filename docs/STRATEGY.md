@@ -98,6 +98,7 @@ Cunnet reference.
 | Proof band | Twenty years, counted | pave.agency full-bleed video section with the logo-in-sand film ("We've poured more than 20 years…") and 4,125+ · 5.31 · 460+ · 120M+ on hairlines |
 | The Category Review | The offer, placed high | pave.agency white icon cards (before, on and after the call) and a dark "Yours to keep" card |
 | Four rooms | Teach before selling (Gary + Chris) | pave.agency eye + "verified comment" layout: the answer, the thread, the screen (with a scrolling strip of CTV networks), the feed |
+| SEO / AEO / GEO | Name the new search before a competitor does | Dark band with the three acronyms set giant in orange, each defined in one line with what wins it and how it's measured. Most buyers haven't heard "AEO" or "GEO" yet, so the page that teaches the term owns it. It is also answered in the FAQ (and FAQPage schema) |
 | Services | Show the range without a menu | Cunnet giant list, grey until active: hovering swaps the image and proof stat, clicking opens what's included. Grouped in the deck's pillar order |
 | Results + photography | Proof the buyer can find themselves in | Cunnet dark portfolio: eight case cards with the headline number over the image and goal filters, then a grid of the team's campaign, product and event photography |
 | Snapshot + testimonial | Catch visitors who aren't ready to talk | Warm-grey band with what the Snapshot covers and a starred testimonial card |
