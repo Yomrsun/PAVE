@@ -10,6 +10,8 @@ layout moves from the Cunnet reference (giant type, photo strip, statement with 
 list with image swap, dark portfolio grid, giant wordmark sign-off). It can ship as it is or be rebuilt section by section in Webflow.
 
 ```
+START-HERE.md              how to edit and preview the site with Claude Code (start here)
+CLAUDE.md                  project notes Claude Code reads automatically
 index.html                 the page (all copy lives here)
 assets/css/styles.css      design system: pave.agency Webflow tokens (Raveo, #f8f7f5 / #efede6 / #181e25 / #f58659) + Cunnet layouts
 assets/js/main.js          interactions: Calendly embed, services list, results filter, accordions, form, "Book a meeting" tab
